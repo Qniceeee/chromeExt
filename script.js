@@ -2,6 +2,10 @@
 "use strict"
 
 
+let buttonClick = document.getElementById('buttonId');
+if(buttonClick){
+    buttonClick.addEventListener('click', onClick1, false);
+}
 let domElements =
     {
         docX1: document.getElementById('text1'),
@@ -10,18 +14,17 @@ let domElements =
         docImage: document.getElementById('image'),
     }
 
-function onClick (image, text)
-{
-    image.innerHTML = '<img title="Только не нажимай на нее" height="200" src="images/onTap.gif">';
-    text.innerHTML = 'Не кликай';
-    setTimeout(onLoaded, 2000);
-}
+function onClick1 ()
+    {
+        domElements.docImage.innerHTML = '<img title="Только не нажимай на нее" height="200" src="images/onTap.gif">';
+        domElements.docX1.innerHTML = 'Не кликай';
+        setTimeout(onLoaded, 2000);
+    }
 
 function onLoaded ()
-{
-    domElements.docImage.innerHTML = '<img title="Только не нажимай на нее" height="200" src="images/start.gif">';
-    domElements.docX1.innerHTML = 'Привет я тут новенькая ;0';
-}
+    {
+        domElements.docImage.innerHTML = '<img title="Только не нажимай на нее" height="200" src="images/start.gif">';
+        domElements.docX1.innerHTML = 'Привет я тут новенькая ;0';
+    }
 
 
-//all ok
